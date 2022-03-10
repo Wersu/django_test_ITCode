@@ -36,7 +36,7 @@
 
     <form class="row g-3">
   <div class="col-auto">
-    <input type="text" class="form-control" placeholder="Название" name="name">
+    <input type="text" class="form-control" placeholder="Название" name="name" value="{{ request.GET.name }}">
   </div>
        <div class="col-auto">
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -56,10 +56,10 @@
     </tr>
   </thead>
   <tbody>
-  {% for book in books %}
+  {% for book in object_list %}
     <tr>
       <th scope="row">{{forloop.counter}}</th>
-      <td><a href="{% url 'core:book_detail' book.pk %}">{{book.name}}</td>
+      <td> <a href="{% url 'core:book_detail' book.pk %}"> {{book.name}} </td>
       <td>{{book.pages|default:"-"}}</td>
       <td>{{core_book.author_id|default:"-"}}</td>
     </tr>
