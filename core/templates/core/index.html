@@ -34,8 +34,15 @@
     </div>
   </nav>
 
+{% block title %}
+    {% if title %}
+      <h3>{{ title }}</h3>
+    {% endif %}
+{% endblock %}
 
-{{ info }}
+{% block content %}
+    <h3>Добро пожаловать на главную страницу</h3>
+{% endblock %}
 
 
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
